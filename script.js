@@ -12,7 +12,7 @@ function playRound(playerSelection, computerSelection) {
   // Capitalize the first letter of the player's selection
   const formattedPlayerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
 
-  // Check for a tie
+  // Check for results
   if (formattedPlayerSelection === computerSelection) {
       return "It's a draw!";
   } else if (
@@ -25,6 +25,8 @@ function playRound(playerSelection, computerSelection) {
       return "You lose this round! " + computerSelection + " beats " + formattedPlayerSelection;
   }
 }
+
+// Game loop functions
 
 function game() {
   let playAgain = true;
@@ -73,7 +75,7 @@ function game() {
           console.log("It's a draw. Play it again to prove you're good!");
       }
 
-      // Determine the winner and set the appropriate prompt message
+      // Determine the winner and prompt message
       let promptMessage;
       if (playerScore > computerScore) {
           promptMessage = "Congrats! You are so good, but you think you can win again? (yes or no)";
@@ -81,7 +83,7 @@ function game() {
           promptMessage = "Do you have the courage to play again, chicken? (yes or no)";
       }
 
-      // Ask the player if they want to play again, ensuring a valid response
+      // Ask the player if they want to play again
       let validResponse = false;
       while (!validResponse) {
           const playAgainResponse = prompt(promptMessage);
@@ -93,7 +95,7 @@ function game() {
           }
       }
 
-      // Clear the terminal (console) before starting a new game
+      // Clear the console before starting a new game
       console.clear();
 
       if (!playAgain) {
@@ -116,5 +118,5 @@ function game() {
   }
 }
 
-// Call the game function to start the game loop
+// Call the function to start the game loop
 game();
