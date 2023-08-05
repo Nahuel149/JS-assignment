@@ -29,6 +29,8 @@ function playRound(playerSelection, computerSelection) {
 // Game loop functions
 
 function game() {
+    alert("WELCOME TO ROCK, PAPER, SCISSORS!\n\nThe best classic game!\n\nPlease first press F12 to open your console");
+    alert("Here's how it works:\n\nRock beats Scissors\nScissors beats Paper\nPaper beats Rock");
   let playAgain = true;
 
   while (playAgain) {
